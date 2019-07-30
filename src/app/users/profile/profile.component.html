@@ -1,0 +1,37 @@
+<app-header></app-header>
+
+<body>
+<div class="limiter">
+  <div class="container-login100" style="background-image: url('../../../assets/images/backgroup.png');">
+    <div class="wrap-login100 p-t-30 p-b-50">
+				<span class="login100-form-title p-b-41">
+					Edit Profile
+				</span>
+      <form class="login100-form validate-form p-b-33 p-t-5" [formGroup]="profileFormGroup" (ngSubmit)="onSubmit()">
+        <div class="wrap-input100 validate-input">
+          <input [class]="(profileFormGroup.get('name').invalid && profileFormGroup.touched)?'input100 error':'input100'" type="text" placeholder="Full name" [(ngModel)]="profileInfo.name" formControlName="name">
+          <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+          <label class="label-alert" *ngIf="profileFormGroup.get('name').invalid && profileFormGroup.touched">Min length is 7</label>
+
+        </div>
+        <div class="wrap-input100 validate-input">
+          <input [class]="(profileFormGroup.get('email').invalid && profileFormGroup.touched)?'input100 error':'input100'" type="text"  placeholder="Email" [(ngModel)]="profileInfo.email" formControlName="email" >
+          <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+          <label class="label-alert" *ngIf="profileFormGroup.get('email').invalid && profileFormGroup.touched">Email's not correct</label>
+        </div>
+        <div class="wrap-input100 validate-input" >
+          <input [class]="(profileFormGroup.get('phoneNumber').invalid && profileFormGroup.touched)?'input100 error':'input100'" type="text"  placeholder="Phone number" [(ngModel)]="profileInfo.phoneNumber" formControlName="phoneNumber">
+          <span class="focus-input100" data-placeholder="&#xe82a;"></span>
+          <label class="label-alert" *ngIf="profileFormGroup.get('phoneNumber').invalid && profileFormGroup.touched">Phone number's not correct</label>
+        </div>
+
+        <div class="container-login100-form-btn m-t-32">
+          <button class="login100-form-btn" type="submit">
+            edit profile
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
