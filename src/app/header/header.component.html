@@ -1,43 +1,68 @@
-<div class="nav-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="/home">AIRBNB <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/auth/login" [style.display]="isLogin?'none':'block'">LOGIN</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/signup" [style.display]="isLogin?'none':'block'">SIGN UP</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/profile" [style.display]="isLogin?'block':'none'">PROFILE</a>
-        </li>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <li class="nav-item">
-          <a class="nav-link" style="cursor: pointer" (click)="logout()" [style.display]="isLogin?'block':'none'">LOG OUT</a>
-        </li>
-      </ul>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+<header class="header_area">
+  <div class="main_menu">
+    <div class="search_input" id="search_input_box">
+      <div class="container">
+        <form class="d-flex justify-content-between">
+          <input type="text" class="form-control" id="search_input" placeholder="Search Here">
+          <button type="submit" class="btn"></button>
+          <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
+        </form>
+      </div>
     </div>
-  </nav>
-</div>
-<div class="context-header"></div>
-<div class="footer-header"></div>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">
+        <a class="navbar-brand logo_h" routerLink="/home"><img src="../../assets/images/logo.png" alt=""></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+          <ul class="nav navbar-nav menu_nav ml-auto">
+            <li class="nav-item active"><a class="nav-link" routerLink="/home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about-us.html">Acount</a></li>
+            <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+            <li class="nav-item submenu dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                 aria-expanded="false" [style.display]="isLogin?'block':'none'">Profile</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" routerLink="/profile">Edit profile</a></li>
+              </ul>
+            </li>
+            <li class="nav-item submenu dropdown">
+              <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                 aria-expanded="false">Blog</a>
+              <ul class="dropdown-menu">
+                <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Blog Details</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" routerLink="/auth/login" [style.display]="isLogin?'none':'block'">Login</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/signup" [style.display]="isLogin?'none':'block'">sign up</a></li>
+            <li class="nav-item"><a class="nav-link" style="cursor: pointer" (click)="logout()" [style.display]="isLogin?'block':'none'">Logout</a></li>
+          </ul>
+          <ul class="nav navbar-nav ml-auto">
+            <div class="social-icons d-flex align-items-center">
+              <a href="">
+                <li><i class="fa fa-facebook"></i></li>
+              </a>
+              <a href="">
+                <li><i class="fa fa-twitter"></i></li>
+              </a>
+              <a href="">
+                <li><i class="fa fa-dribbble"></i></li>
+              </a>
+              <a href="">
+                <li><i class="fa fa-behance"></i></li>
+              </a>
+            </div>
+            <li class="nav-item"><a href="#" class="search">
+              <i class="lnr lnr-magnifier" id="search"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
